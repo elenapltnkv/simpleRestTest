@@ -1,0 +1,676 @@
+<html>
+	  <head>
+(    <title>Demo Web Shop. Books</title>
+H    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+D    <meta name="description" content="Books category description"/>
+C    <meta name="keywords" content="Books, Dictionary, Textbooks"/>
+3    <meta name="generator" content="nopCommerce"/>
+J    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+\    <link href="/Themes/DefaultClean/Content/styles.css" rel="stylesheet" type="text/css"/>
+`    <link href="/Themes/DefaultClean/Content/responsive.css" rel="stylesheet" type="text/css"/>
+y    <link href="/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/>
+I    <script src="/Scripts/jquery-1.10.2.min.js" type="text/javascript"/>
+K    <script src="/Scripts/jquery.validate.min.js" type="text/javascript"/>
+W    <script src="/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"/>
+S    <script src="/Scripts/jquery-ui-1.10.3.custom.min.js" type="text/javascript"/>
+P    <script src="/Scripts/jquery-migrate-1.2.1.min.js" type="text/javascript"/>
+E    <script src="/Scripts/public.common.js" type="text/javascript"/>
+G    <script src="/Scripts/public.ajaxcart.js" type="text/javascript"/>
+U    <link rel="shortcut icon" href="https://demowebshop.tricentis.com/favicon.ico"/>
+
+  </head>
+	  <body>
+X    <div id="dialog-notifications-success" title="Notification" style="display:none;"/>
+O    <div id="dialog-notifications-error" title="Error" style="display:none;"/>
+9    <div class="bar-notification" id="bar-notification">
+2      <span class="close" title="Close">Â </span>
+    </div>
+&    <div class="master-wrapper-page">
++      <div class="master-wrapper-content">
+(        <script type="text/javascript">
+l            AjaxCart.init(false, '.header-links .cart-qty', '.header-links .wishlist-qty', '#flyout-cart');
+        </script>
+        <div class="header">
+$          <div class="header-logo">
+&            <a shape="rect" href="/">
+o              <img title="" alt="Tricentis Demo Web Shop" src="/Themes/DefaultClean/Content/images/logo.png"/>
+            </a>
+          </div>
+-          <div class="header-links-wrapper">
+'            <div class="header-links">
+              <ul>
+                <li>
+[                  <a shape="rect" class="account" href="/customer/info">fadfad@gdff.cd</a>
+                </li>
+                <li>
+P                  <a shape="rect" class="ico-logout" href="/logout">Log out</a>
+                </li>
+&                <li id="topcartlink">
+A                  <a shape="rect" class="ico-cart" href="/cart">
+B                    <span class="cart-label">Shopping cart</span>
+7                    <span class="cart-qty">(10)</span>
+                  </a>
+                </li>
+                <li>
+I                  <a shape="rect" class="ico-wishlist" href="/wishlist">
+=                    <span class="cart-label">Wishlist</span>
+:                    <span class="wishlist-qty">(0)</span>
+                  </a>
+                </li>
+              </ul>
+.              <script type="text/javascript">
+,            $(document).ready(function () {
+L                $('.header').on('mouseenter', '#topcartlink', function () {
+:                    $('#flyout-cart').addClass('active');
+                });
+L                $('.header').on('mouseleave', '#topcartlink', function () {
+=                    $('#flyout-cart').removeClass('active');
+                });
+L                $('.header').on('mouseenter', '#flyout-cart', function () {
+:                    $('#flyout-cart').addClass('active');
+                });
+L                $('.header').on('mouseleave', '#flyout-cart', function () {
+=                    $('#flyout-cart').removeClass('active');
+                });
+            });
+        </script>
+            </div>
+7            <div class="flyout-cart" id="flyout-cart">
+/              <div class="mini-shopping-cart">
+$                <div class="count">
+
+VThere are                   <a shape="rect" class="items" href="/cart">10 item(s)</a>
+- in your cart.                        </div>
+$                <div class="items">
++                  <div class="item first">
+*                    <div class="picture">
+„                      <a shape="rect" href="/build-your-cheap-own-computer" title="Show details for Build your own cheap computer">
+ñ                        <img alt="Picture of Build your own cheap computer" src="https://demowebshop.tricentis.com/content/images/thumbs/0000172_build-your-own-cheap-computer_47.jpeg" title="Show details for Build your own cheap computer"/>
+                      </a>
+                    </div>
+*                    <div class="product">
+)                      <div class="name">
+p                        <a shape="rect" href="/build-your-cheap-own-computer">Build your own cheap computer</a>
+                      </div>
+/                      <div class="attributes">
+
+i                                    Processor: Medium [+15.00]                        <br clear="none"/>
+4RAM: 2 GB                        <br clear="none"/>
+HDD: 320 GB
+=                                                      </div>
+*                      <div class="price">
+8Unit price:                         <span>815.00</span>
+                      </div>
+-                      <div class="quantity">
+2Quantity:                         <span>10</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+%                <div class="totals">
+6Sub-Total:                   <strong>8150.00</strong>
+                </div>
+&                <div class="buttons">
+x                  <input type="button" class="button-1 cart-button" value="Go to cart" onclick="setLocation('/cart')"/>
+                </div>
+              </div>
+            </div>
+          </div>
+#          <div class="search-box">
+‰            <form enctype="application/x-www-form-urlencoded" method="get" action="/search" onsubmit="return check_small_search_form()">
+ƒ              <input type="text" class="search-box-text" id="small-searchterms" autocomplete="off" value="Search store" name="q"/>
+W              <input type="submit" class="button-1 search-box-button" value="Search"/>
+.              <script type="text/javascript">
+'        $(document).ready(function() {
+7            $("#small-searchterms").focus(function() {
+4                if (this.value == 'Search store') {
+%                    this.value = '';
+                }
+            });
+
+6            $("#small-searchterms").blur(function() {
+(                if (this.value == '') {
+1                    this.value = 'Search store';
+                }
+            });
+        });
+
+-        function check_small_search_form() {
+8            var search_terms = $("#small-searchterms");
+T            if (search_terms.val() == "" || search_terms.val() == "Search store") {
+;                alert('Please enter some search keyword');
+&                search_terms.focus();
+                return false;
+            }
+            return true;
+
+        }
+    </script>
+.              <script type="text/javascript">
+                $(function() {
+;                    $('#small-searchterms').autocomplete({
+(                            delay: 500,
+*                            minLength: 3,
+G                            source: '/catalog/searchtermautocomplete',
+:                            select: function(event, ui) {
+L                                $("#small-searchterms").val(ui.item.label);
+A                                setLocation(ui.item.producturl);
+.                                return false;
+                            }
+                        })
+T                        .data("ui-autocomplete")._renderItem = function(ul, item) {
+0                            var t = item.label;
+*                            //html encode
+/                            t = htmlEncode(t);
+>                            return $("&lt;li&gt;&lt;/li&gt;")
+A                                .data("item.autocomplete", item)
+H                                .append("&lt;a&gt;" + t + "&lt;/a&gt;")
++                            .appendTo(ul);
+                    };
+                });
+            </script>
+            </form>
+          </div>
+1          <div class="header-selectors-wrapper">
+5            <div class="tax-display-type-selector"/>
+-            <div class="currency-selector"/>
+-            <div class="language-selector"/>
+          </div>
+        </div>
+"        <div class="header-menu">
+           <ul class="top-menu">
+            <li>
+2              <a shape="rect" href="/books">Books
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+            <li>
+:              <a shape="rect" href="/computers">Computers
+        </a>
+/              <div class="top-menu-triangle"/>
+.              <ul class="sublist firstLevel">
+                <li>
+<                  <a shape="rect" href="/desktops">Desktops
+        </a>
+                </li>
+                <li>
+>                  <a shape="rect" href="/notebooks">Notebooks
+        </a>
+                </li>
+                <li>
+B                  <a shape="rect" href="/accessories">Accessories
+        </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+>              <a shape="rect" href="/electronics">Electronics
+        </a>
+/              <div class="top-menu-triangle"/>
+.              <ul class="sublist firstLevel">
+                <li>
+E                  <a shape="rect" href="/camera-photo">Camera, photo
+        </a>
+                </li>
+                <li>
+B                  <a shape="rect" href="/cell-phones">Cell phones
+        </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+H              <a shape="rect" href="/apparel-shoes">Apparel &amp; Shoes
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+            <li>
+J              <a shape="rect" href="/digital-downloads">Digital downloads
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+            <li>
+6              <a shape="rect" href="/jewelry">Jewelry
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+            <li>
+<              <a shape="rect" href="/gift-cards">Gift Cards
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+          </ul>
+*          <script type="text/javascript">
+8    $('li', '.top-menu').on('mouseenter', function () {
+3        $('a', $(this)).first().addClass('hover');
+6        if (!$(this).parent().hasClass('top-menu')) {
+.            var width = $(this).innerWidth();
+D            $('.sublist', $(this)).first().css('left', width + 15);
+
+        }
+;        $('.sublist', $(this)).first().addClass('active');
+=        $('.top-menu-triangle', $(this)).addClass('active');
+    });
+
+8    $('li', '.top-menu').on('mouseleave', function () {
+6        $('a', $(this)).first().removeClass('hover');
+>        $('.sublist', $(this)).first().removeClass('active');
+@        $('.top-menu-triangle', $(this)).removeClass('active');
+    });
+
+
+</script>
+%          <div id="mob-menu-button">
+%            <a shape="rect" href="">
+"              <span class="icon">
+%                <span class="line"/>
+%                <span class="line"/>
+%                <span class="line"/>
+              </span>
+&              <span>Categories</span>
+            </a>
+          </div>
+$          <ul class="mob-top-menu">
+            <li>
+2              <a shape="rect" href="/books">Books
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+            <li>
+:              <a shape="rect" href="/computers">Computers
+        </a>
+/              <div class="top-menu-triangle"/>
+-              <span class="expand">Â </span>
+.              <ul class="sublist firstLevel">
+                <li>
+<                  <a shape="rect" href="/desktops">Desktops
+        </a>
+                </li>
+                <li>
+>                  <a shape="rect" href="/notebooks">Notebooks
+        </a>
+                </li>
+                <li>
+B                  <a shape="rect" href="/accessories">Accessories
+        </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+>              <a shape="rect" href="/electronics">Electronics
+        </a>
+/              <div class="top-menu-triangle"/>
+-              <span class="expand">Â </span>
+.              <ul class="sublist firstLevel">
+                <li>
+E                  <a shape="rect" href="/camera-photo">Camera, photo
+        </a>
+                </li>
+                <li>
+B                  <a shape="rect" href="/cell-phones">Cell phones
+        </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+H              <a shape="rect" href="/apparel-shoes">Apparel &amp; Shoes
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+            <li>
+J              <a shape="rect" href="/digital-downloads">Digital downloads
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+            <li>
+6              <a shape="rect" href="/jewelry">Jewelry
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+            <li>
+<              <a shape="rect" href="/gift-cards">Gift Cards
+        </a>
+/              <div class="top-menu-triangle"/>
+            </li>
+          </ul>
+*          <script type="text/javascript">
+:        $('a', $('#mob-menu-button')).toggle(function() {
+5                $('.mob-top-menu').addClass('show');
+            },
+            function() {
+8                $('.mob-top-menu').removeClass('show');
+            }
+        );
+
+        $(function($) {
+:            $('.mob-top-menu .expand').click(function() {
+/                var parent = $(this).parent();
+1                if (parent.hasClass('active')) {
+;                    $(".sublist:first", parent).hide(300);
+2                    parent.removeClass('active');
+                } else {
+;                    $(".sublist:first", parent).show(300);
+/                    parent.addClass('active');
+                }
+            });
+        });
+    </script>
+        </div>
+F        <div class="ajax-loading-block-window" style="display: none">
+'          <div class="loading-image"/>
+        </div>
+*        <div class="master-wrapper-main">
+          <div class="side-2">
+:            <div class="block block-category-navigation">
+"              <div class="title">
+,                <strong>Categories</strong>
+              </div>
+$              <div class="listbox">
+"                <ul class="list">
+&                  <li class="active">
+8                    <a shape="rect" href="/books">Books
+        </a>
+                  </li>
+(                  <li class="inactive">
+@                    <a shape="rect" href="/computers">Computers
+        </a>
+                  </li>
+(                  <li class="inactive">
+D                    <a shape="rect" href="/electronics">Electronics
+        </a>
+                  </li>
+(                  <li class="inactive">
+N                    <a shape="rect" href="/apparel-shoes">Apparel &amp; Shoes
+        </a>
+                  </li>
+(                  <li class="inactive">
+P                    <a shape="rect" href="/digital-downloads">Digital downloads
+        </a>
+                  </li>
+(                  <li class="inactive">
+<                    <a shape="rect" href="/jewelry">Jewelry
+        </a>
+                  </li>
+(                  <li class="inactive">
+B                    <a shape="rect" href="/gift-cards">Gift Cards
+        </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+>            <div class="block block-manufacturer-navigation">
+"              <div class="title">
+/                <strong>Manufacturers</strong>
+              </div>
+$              <div class="listbox">
+"                <ul class="list">
+(                  <li class="inactive">
+D                    <a shape="rect" href="/tricentis">Tricentis</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+1            <div class="block block-newsletter">
+"              <div class="title">
+,                <strong>Newsletter</strong>
+              </div>
+$              <div class="listbox">
+Y                <div class="newsletter-subscribe-block" id="newsletter-subscribe-block">
+;                  <span>Sign up for our newsletter:</span>
+1                  <div class="newsletter-email">
+_                    <input type="text" id="newsletter-email" name="NewsletterEmail" value=""/>
+x                    <span class="field-validation-valid" data-valmsg-for="NewsletterEmail" data-valmsg-replace="true"/>
+                  </div>
+(                  <div class="buttons">
+‹                    <input type="button" class="button-1 newsletter-subscribe-button" id="newsletter-subscribe-button" value="Subscribe"/>
+t                    <span class="please-wait" id="subscribe-loading-progress" style="display: none;">Wait...</span>
+                  </div>
+                </div>
+T                <div class="newsletter-result-block" id="newsletter-result-block"/>
+              </div>
+.              <script type="text/javascript">
+(        $(document).ready(function () {
+B            $('#newsletter-subscribe-button').click(function () {
+                
+:                var email = $("#newsletter-email").val();
+J                var subscribeProgress = $("#subscribe-loading-progress");
+*                subscribeProgress.show();
+                $.ajax({
+"                    cache: false,
+"                    type: "POST",
+1                    url: "/subscribenewsletter",
+.                    data: { "email": email },
+/                    success: function (data) {
+2                        subscribeProgress.hide();
+I                        $("#newsletter-result-block").html(data.Result);
+-                         if (data.Success) {
+E                            $('#newsletter-subscribe-block').hide();
+B                            $('#newsletter-result-block').show();
+                         }
+                          else {
+f                            $('#newsletter-result-block').fadeIn("slow").delay(2000).fadeOut("slow");
+                         }
+                    },
+D                    error:function (xhr, ajaxOptions, thrownError){
+7                        alert('Failed to subscribe.');
+2                        subscribeProgress.hide();
+                    }  
+$                });                
+                return false;
+            });
+        });
+    </script>
+            </div>
+          </div>
+!          <div class="center-2">
+%            <div class="breadcrumb">
+              <ul>
+                <li>
+A                  <a shape="rect" href="/" title="Home">Home</a>
+3                  <span class="delimiter">/</span>
+                </li>
+                <li>
+>                  <strong class="current-item">Books</strong>
+                </li>
+              </ul>
+            </div>
+-            <div class="page category-page">
+'              <div class="page-title">
+                <h1>Books</h1>
+              </div>
+&              <div class="page-body">
+0                <div class="product-selectors">
+1                  <div class="product-viewmode">
+)                    <span>View as</span>
+q                    <select id="products-viewmode" name="products-viewmode" onchange="setLocation(this.value);">
+Œ                      <option selected="selected" value="https://demowebshop.tricentis.com/books?price=50-&amp;viewmode=grid">Grid</option>
+x                      <option value="https://demowebshop.tricentis.com/books?price=50-&amp;viewmode=list">List</option>
+                    </select>
+                  </div>
+0                  <div class="product-sorting">
+)                    <span>Sort by</span>
+o                    <select id="products-orderby" name="products-orderby" onchange="setLocation(this.value);">
+Œ                      <option selected="selected" value="https://demowebshop.tricentis.com/books?price=50-&amp;orderby=0">Position</option>
+|                      <option value="https://demowebshop.tricentis.com/books?price=50-&amp;orderby=5">Name: A to Z</option>
+|                      <option value="https://demowebshop.tricentis.com/books?price=50-&amp;orderby=6">Name: Z to A</option>
+ƒ                      <option value="https://demowebshop.tricentis.com/books?price=50-&amp;orderby=10">Price: Low to High</option>
+ƒ                      <option value="https://demowebshop.tricentis.com/books?price=50-&amp;orderby=11">Price: High to Low</option>
+{                      <option value="https://demowebshop.tricentis.com/books?price=50-&amp;orderby=15">Created on</option>
+                    </select>
+                  </div>
+2                  <div class="product-page-size">
+)                    <span>Display</span>
+q                    <select id="products-pagesize" name="products-pagesize" onchange="setLocation(this.value);">
+r                      <option value="https://demowebshop.tricentis.com/books?price=50-&amp;pagesize=4">4</option>
+†                      <option selected="selected" value="https://demowebshop.tricentis.com/books?price=50-&amp;pagesize=8">8</option>
+t                      <option value="https://demowebshop.tricentis.com/books?price=50-&amp;pagesize=12">12</option>
+                    </select>
+*                    <span>per page</span>
+                  </div>
+                </div>
+6                <div class="product-filters-wrapper">
+C                  <div class="product-filters price-range-filter">
+/                    <div class="filter-title">
+7                      <strong>Filter by price</strong>
+                    </div>
+1                    <div class="filter-content">
+9                      <div class="selected-price-range">
+
+[                        Over                         <span class="PriceRange">50.00</span>
+                      </div>
+2                      <div class="remove-filter">
+‹                        <a shape="rect" class="remove-price-range-filter" href="https://demowebshop.tricentis.com/books">Remove Filter</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
++                <div class="product-grid">
+)                  <div class="item-box">
+C                    <div class="product-item" data-productid="27">
+,                      <div class="picture">
+Z                        <a shape="rect" href="/science" title="Show details for Science">
+²                          <img alt="Picture of Science" src="https://demowebshop.tricentis.com/content/images/thumbs/0000132_science_125.jpeg" title="Show details for Science"/>
+                        </a>
+                      </div>
+,                      <div class="details">
+3                        <h2 class="product-title">
+F                          <a shape="rect" href="/science">Science</a>
+                        </h2>
+O                        <div class="product-rating-box" title="165 review(s)">
+/                          <div class="rating">
+6                            <div style="width: 39%"/>
+!                          </div>
+                        </div>
+2                        <div class="description">
+*            A guide to elementary science
+        </div>
+/                        <div class="add-info">
+/                          <div class="prices">
+G                            <span class="price old-price">67.00</span>
+J                            <span class="price actual-price">51.00</span>
+!                          </div>
+1                          <div class="buttons"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+%                <div class="pager"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+*        <div class="footer-menu-wrapper">
++          <div class="column information">
+!            <h3>Information</h3>
+            <ul>
+              <li>
+<                <a shape="rect" href="/sitemap">Sitemap</a>
+              </li>
+              <li>
+T                <a shape="rect" href="/shipping-returns">Shipping &amp; Returns</a>
+              </li>
+              <li>
+J                <a shape="rect" href="/privacy-policy">Privacy Notice</a>
+              </li>
+              <li>
+P                <a shape="rect" href="/conditions-of-use">Conditions of Use</a>
+              </li>
+              <li>
+>                <a shape="rect" href="/about-us">About us</a>
+              </li>
+              <li>
+A                <a shape="rect" href="/contactus">Contact us</a>
+              </li>
+            </ul>
+          </div>
+0          <div class="column customer-service">
+&            <h3>Customer service</h3>
+            <ul>
+              <li>
+:                <a shape="rect" href="/search">Search</a>
+              </li>
+              <li>
+6                <a shape="rect" href="/news">News</a>
+              </li>
+              <li>
+6                <a shape="rect" href="/blog">Blog</a>
+              </li>
+              <li>
+\                <a shape="rect" href="/recentlyviewedproducts">Recently viewed products</a>
+              </li>
+              <li>
+R                <a shape="rect" href="/compareproducts">Compare products list</a>
+              </li>
+              <li>
+E                <a shape="rect" href="/newproducts">New products</a>
+              </li>
+            </ul>
+          </div>
+*          <div class="column my-account">
+             <h3>My account</h3>
+            <ul>
+              <li>
+U                <a shape="rect" class="account" href="/customer/info">My account</a>
+              </li>
+              <li>
+C                <a shape="rect" href="/customer/orders">Orders</a>
+              </li>
+              <li>
+R                <a shape="rect" class="" href="/customer/addresses">Addresses</a>
+              </li>
+              <li>
+P                <a shape="rect" class="ico-cart" href="/cart">Shopping cart</a>
+              </li>
+              <li>
+S                <a shape="rect" class="ico-wishlist" href="/wishlist">Wishlist</a>
+              </li>
+            </ul>
+          </div>
+)          <div class="column follow-us">
+            <h3>Follow us</h3>
+            <ul>
+$              <li class="facebook">
+h                <a shape="rect" href="http://www.facebook.com/nopCommerce" target="_blank">Facebook</a>
+              </li>
+#              <li class="twitter">
+c                <a shape="rect" href="https://twitter.com/nopCommerce" target="_blank">Twitter</a>
+              </li>
+              <li class="rss">
+;                <a shape="rect" href="/news/rss/1">RSS</a>
+              </li>
+#              <li class="youtube">
+k                <a shape="rect" href="http://www.youtube.com/user/nopCommerce" target="_blank">YouTube</a>
+              </li>
+'              <li class="google-plus">
+h                <a shape="rect" href="https://plus.google.com/+nopcommerce" target="_blank">Google+</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+'        <div class="footer-poweredby">
+
+`        Powered by           <a shape="rect" href="http://www.nopcommerce.com/">nopCommerce</a>
+        </div>
+(        <div class="footer-disclaimer">
+H        Copyright Â© 2024 Tricentis Demo Web Shop. All rights reserved.
+    </div>
+*        <div class="footer-store-theme"/>
+      </div>
+    </div>
+$    <script type="text/javascript">
+var _gaq = _gaq || [];
+-_gaq.push(['_setAccount', 'UA-6574346-11']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+]    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+v    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+Z    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+  </body>
+</html>
