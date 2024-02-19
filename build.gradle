@@ -1,10 +1,25 @@
 plugins {
     id("java-library")
+    id("io.freefair.lombok") version "8.6"
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group = "elenapltnkv"
 version = "1.0-SNAPSHOT"
+allure {
+    report {
+        version.set("2.25.0") //версия Allure Report (https://github.com/allure-framework/allure2)
+    }
 
+    adapter {
+        aspectjWeaver.set(true) // обработка аннотации @Step
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.25.0") //версия Allure JUnit5 (https://github.com/allure-framework/allure-java)
+            }
+        }
+    }
+}
 repositories {
     mavenCentral()
 }
@@ -15,7 +30,10 @@ dependencies {
     testImplementation(
             "io.rest-assured:rest-assured:5.4.0",
             "org.junit.jupiter:junit-jupiter:5.9.0",
-            "org.slf4j:slf4j-simple:$slf4jVersion"
+            "io.qameta.allure:allure-rest-assured:2.25.0",
+            "org.slf4j:slf4j-simple:$slf4jVersion",
+            "com.fasterxml.jackson.core:jackson-databind:2.16.1",
+            "org.assertj:assertj-core:3.25.3"
     )
 }
 
@@ -28,5 +46,16 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+tasks.test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+}
+
+task spec (type: Test) {
+    useJUnitPlatform {
+        includeTags("spec")
     }
 }

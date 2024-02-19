@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.LoginSpecTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-19T07:26:23" hostname="user" time="6.067">
+  <properties/>
+  <testcase name="authLoginCustomApiListenerTest()" classname="tests.LoginSpecTest" time="6.067"/>
+  <system-out><![CDATA[Request URI:	https://reqres.in/api/login
+Headers:		Accept=*/*
+				Content-Type=application/json
+Body:
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+{
+    "token": "QpwL5tke4Pnpja7X4"
+}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
